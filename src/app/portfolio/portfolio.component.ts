@@ -26,15 +26,15 @@ export class PortfolioComponent implements OnInit {
   closeIcon: string = '';
   mobileWidth = 767;
   showMenu: boolean = false;
-  menuIconSrc: string = '../../assets/PortfolioAssets/menu-icon.png';
-  menuBarIconSrc: string = '../../assets/PortfolioAssets/menu-icon.png';
-  closeIconSrc: string = '../../assets/PortfolioAssets/close-icon.png';
+  menuIconSrc: string = '././assets/PortfolioAssets/menu-icon.png';
+  menuBarIconSrc: string = '././assets/PortfolioAssets/menu-icon.png';
+  closeIconSrc: string = '././assets/PortfolioAssets/close-icon.png';
   presentMonths: number = 0;
   carouselItems = [
-    { title: 'Single Page Appication', img: '../../assets/PortfolioAssets/spa-icon-green.png', textContent:'SPAs — dynamic and responsive. From sleek portfolios to dynamic e-commerce and real-time collaboration, SPAs redefine engagement. Experience efficiency, speed, and user-centric design like task management, weather apps, and expense tracker.' },
-    { title: 'Static Development', img: '../../assets/PortfolioAssets/static-icon-green.png', textContent:'Discover the elegance and efficiency of static web development—crafting captivating portfolios, informative recipe books, and polished product landing pages. Experience the versatility with dynamic event pages and precision countdown timers.' },
-    { title: 'Dynamic Development', img: '../../assets/PortfolioAssets/dynamic-icon-green.png', textContent: 'Enter the dynamic world of web development, harmonizing interactivity with robust functionality. Develop real-time solutions, including e-learning platform, booking & reservation system, online blogging, job board, news portal, music streaming and recipe book.' },
-    { title: 'E-Commerce Platform', img: '../../assets/PortfolioAssets/buy-icon-green.png', textContent:'Proficient in crafting ecommerce websites, I bring expertise in user-centric design, seamless navigation, and secure transactions. My skillset ensures a premium online shopping experience, integrating functionality with an aesthetically pleasing interface.' }
+    { title: 'Single Page Appication', img: '././assets/PortfolioAssets/spa-icon-green.png', textContent:'SPAs — dynamic and responsive. From sleek portfolios to dynamic e-commerce and real-time collaboration, SPAs redefine engagement. Experience efficiency, speed, and user-centric design like task management, weather apps, and expense tracker.' },
+    { title: 'Static Development', img: '././assets/PortfolioAssets/static-icon-green.png', textContent:'Discover the elegance and efficiency of static web development—crafting captivating portfolios, informative recipe books, and polished product landing pages. Experience the versatility with dynamic event pages and precision countdown timers.' },
+    { title: 'Dynamic Development', img: '././assets/PortfolioAssets/dynamic-icon-green.png', textContent: 'Enter the dynamic world of web development, harmonizing interactivity with robust functionality. Develop real-time solutions, including e-learning platform, booking & reservation system, online blogging, job board, news portal, music streaming and recipe book.' },
+    { title: 'E-Commerce Platform', img: '././assets/PortfolioAssets/buy-icon-green.png', textContent:'Proficient in crafting ecommerce websites, I bring expertise in user-centric design, seamless navigation, and secure transactions. My skillset ensures a premium online shopping experience, integrating functionality with an aesthetically pleasing interface.' }
   ];
 
   @ViewChild('homeSection') homeSection!: ElementRef;
@@ -45,7 +45,7 @@ export class PortfolioComponent implements OnInit {
   @ViewChild('contactSection') contactSection!: ElementRef;
   
   constructor(private modalService: BsModalService, private clipboard: Clipboard,private snackBar: MatSnackBar) {
-    this.pdfSrc = '../../assets/PortfolioAssets/Hamandakkumar_Resume.pdf';
+    this.pdfSrc = '././assets/PortfolioAssets/Hamandakkumar_Resume.pdf';
   }
   
   ngAfterViewInit() {
@@ -153,7 +153,7 @@ export class PortfolioComponent implements OnInit {
       let intervalId = setInterval(updateText, 400);
       let link = document.createElement("a");
       link.download = "hamand_resume";
-      link.href = "../../assets/PortfolioAssets/Hamandakkumar_Resume.pdf";
+      link.href = "././assets/PortfolioAssets/Hamandakkumar_Resume.pdf";
       link.click();
       setTimeout(() => {
         clearInterval(intervalId);
@@ -175,7 +175,7 @@ export class PortfolioComponent implements OnInit {
         class: "model-view-popup",
       });
       this.pdfViewerModuleLoaded = true;
-      this.pdfSrc = '../../assets/PortfolioAssets/Hamandakkumar_Resume.pdf';
+      this.pdfSrc = '././assets/PortfolioAssets/Hamandakkumar_Resume.pdf';
     }
   }
 
@@ -207,19 +207,19 @@ export class PortfolioComponent implements OnInit {
       case 'location':
         this.clipboard.copy(this.location.toString());
         this.popupMessage = 'Location Copied';
-        this.closeIcon = '../../assets/PortfolioAssets/cancel-green-icon.png';
+        this.closeIcon = '././assets/PortfolioAssets/cancel-green-icon.png';
         this.showCopiedMessage();
         break;
       case 'mail':
         this.clipboard.copy(this.mailId.toString());
         this.popupMessage = 'E-Mail Id Copied';
-        this.closeIcon = '../../assets/PortfolioAssets/cancel-green-icon.png';
+        this.closeIcon = '././assets/PortfolioAssets/cancel-green-icon.png';
         this.showCopiedMessage();
         break;
       case 'mobile':
         this.clipboard.copy(this.phoneNumber.toString());
         this.popupMessage = 'Phone Number Copied';
-        this.closeIcon = '../../assets/PortfolioAssets/cancel-green-icon.png';
+        this.closeIcon = '././assets/PortfolioAssets/cancel-green-icon.png';
         this.showCopiedMessage();
         break;
       default:
