@@ -1291,6 +1291,7 @@ li a.active::after{
     background-image: url('../../assets/PortfolioAssets/spa-icon-white.png'); 
     background-size: cover;
     width: 60px;
+    height: 60px;
     position: relative;
     left: 15.5%;
     display: none;
@@ -1302,6 +1303,7 @@ li a.active::after{
     background-image: url('../../assets/PortfolioAssets/static-icon-white.png'); 
     background-size: cover;
     width: 60px;
+    height: 60px;
     position: relative;
     left: 15.5%;
     display: none;
@@ -1313,6 +1315,7 @@ li a.active::after{
     background-image: url('../../assets/PortfolioAssets/dynamic-icon-white.png'); 
     background-size: cover;
     width: 60px;
+    height: 60px;
     position: relative;
     left: 15.5%;
     display: none;
@@ -1324,6 +1327,7 @@ li a.active::after{
     background-image: url('../../assets/PortfolioAssets/buy-icon-white.png'); 
     background-size: cover;
     width: 60px;
+    height: 60px;
     position: relative;
     left: 15.5%;
     display: none;
