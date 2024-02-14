@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --white: #FFFFFF;
+    --success: #04A35B;
+    --primary-font: 'Josefin Sans', sans-serif;
+    --primary-color: #CFC0C0;
+    --secondary-color: #008080;
+    --BG1: linear-gradient(105deg, #CFC0C0 0%, #EFEEEE 99.6%);
+    --BG2: linear-gradient(260deg, #CFC0C0 0%, #EDECEC 100%);
+    --BG3: linear-gradient(105deg, #D6CACA 0%, #DCD3D3 99.6%);
+    --HTML: radial-gradient(circle, #FF974A 30%, #E65100 140%);
+    --CSS: radial-gradient(circle, #35C1F1 30%, #1A94EA 140%);
+    --ANG: radial-gradient(circle, #DD2C00 30%, #B71C1C 140%);
+    --BOOT: radial-gradient(circle, #A775FF 30%, #6C19FF 140%);
+    --TYPE: radial-gradient(circle, #2CA7F9 30%, #0D87E1 140%);
+    --API: radial-gradient(circle, #5B5B5B 30%, #333333 140%);
+    --DB: radial-gradient(circle, #42A4EE 30%, #11408B 140%);
+    --contact:linear-gradient(105deg, #008080 0%, #00A6A6 99.6%);
+    --OFFICE: radial-gradient(circle, #D34900 30%, #D92237 140%);
+}
+*, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+  }
+
+  body{
+    overflow-x: hidden;
+  }

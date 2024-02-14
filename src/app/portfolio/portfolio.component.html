@@ -1,0 +1,880 @@
+<div *ngIf="!isMobileScreen()">
+  <div class="fixed left-0 right-0 flex items-center justify-between pl-16 pr-16 h-20 navbar shadow-md bg-white">
+      <!-- Logo on the left -->
+      <div>
+          <img src="../../assets/PortfolioAssets/Hamand-Kumar.png" alt="Logo" class="navbar-logo w-24">
+      </div>
+  
+      <!-- Menu on the right -->
+      <div class="navbar-menu">
+          <ul class="flex">
+            <li class="mr-12"><a (click)="navigateTo('home','')" [class.active]="activeLink === 'home'" class="cursor-pointer">Home</a></li>
+            <li class="mr-12"><a (click)="navigateTo('intro','')" [class.active]="activeLink === 'intro'" class="cursor-pointer">My Intro</a></li>
+            <li class="mr-12"><a (click)="navigateTo('expertise','')" [class.active]="activeLink === 'expertise'" class="cursor-pointer">Expertise</a></li>
+            <li class="mr-12"><a (click)="navigateTo('journey','')" [class.active]="activeLink === 'journey'" class="cursor-pointer">Awesome Journey</a></li>
+            <li class="mr-12"><a (click)="navigateTo('services','')" [class.active]="activeLink === 'services'" class="cursor-pointer">Services</a></li>
+            <li><a (click)="navigateTo('contact','')" [class.active]="activeLink === 'contact'" class="cursor-pointer">Contact</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="contain">
+    <div id="home" #homeSection class="h-100">
+      <div class="home-content flex items-center justify-between h-full pl-16">
+        <div class="home-text-content pl-24 pt-16 relative">
+          <div class="text flex items-center h-24">
+            <div class="h-text">
+              <p class="text-76 text-white text-shadow-md">H</p>
+            </div>
+            <div class="name-text">
+              <p class="text-lg text-white">ello, It's me</p>
+              <p class="text-2xl text-white text-shadow-sm">amandakkumar</p>
+            </div>
+          </div>
+          <div class="about-text flex h-10">
+            <p class="text-white text-3xl font-medium"> I'm a </p>
+            <div class="about text-teal-700 text-3xl font-bold block pl-2 grid overflow-hidden h-8">
+              <span>Full Stack Developer.</span>
+              <span>Web Developer.</span>
+              <span>Software Engineer.</span>
+            </div>
+          </div>
+          <div class="get-text">
+            <button class="get-btn pl-5 pr-5 h-8 rounded flex items-center justify-center" (click)="navigateTo('contact','')">Get In Touch</button>
+          </div>
+        </div>
+        <div class="image-content pr-24">
+          <div class="image border-4 rounded-full border-solid mt-20 relative shadow-md">
+            <img src="../../assets/PortfolioAssets/hamand.JPG" alt="profile" class="w-72 rounded-full border-8 border-white border-solid">
+          </div>
+          <div class="border absolute z-0 border-solid shadow-md">
+            <div class="circle w-full h-full relative z-0 border-8 border-solid border-white">
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="intro" #introSection class="h-100">
+      <div class="reveal">
+        <div class="intro-content flex pl-16 pr-16 pt-28">
+          <div class="image-content">
+            <img src="../../assets/PortfolioAssets/intro-img.png" alt="intro" class="image relative">
+          </div>
+          <div class="intro-text-content">
+            <div class="intro-title flex justify-center">
+              <p class="intro-title-text inline-block text-2xl text-center">Who am I ?</p>
+            </div>
+            <p class="text text-justify pt-8 text-gray-800">Marvel at the coding sorcerer, armed with a Master's in Computer Applications (MCA) and
+              1.5 years of valiantly battling bugs in the unpredictable realm of full-stack development. I'm not merely
+              a Software Engineer; I'm the wizard your web applications never knew they were missing. A Dynamic Full Stack
+              Developer with the ability to turn convoluted business requirements into elegant code. I don't just write
+              code; I create digital magic that leaves users impressed and developers wondering, 'How did they do that?'</p>
+              <br>
+            <p class="text text-justify text-gray-800">Whether it's front-end finesse or back-end wizardry, I've got it all under my spell. My
+              expertise resembles a magical array of technologies and programming languages - I've dabbled in so many, I 
+              practically speak in code. So, if you seek someone to transform your software dreams into reality, look no 
+              further. I'm not just committed to delivering superior, scalable, and responsive software; I'm committed 
+              to doing it with a dash of enchantment and a sprinkle of coding sorcery.</p>
+            <div class="intro-btn flex pt-4">
+              <button class="download-btn flex justify-evenly items-center text-white h-8 rounded-md pl-5 pr-5" (click)="downloadBtn()">Download Resume <img src="../../assets/PortfolioAssets/download-icon.png" alt="download" class="w-6 pl-2 download-btn-img"></button>
+              <button class="view-btn flex justify-evenly items-center h-8 rounded-md pl-5 pr-5 ml-6" (click)="viewResume()" (mouseover)="onHover('view')" (mouseleave)="onLeave()" >View Resume <img [src]="isHovered ? '../../assets/PortfolioAssets/eye-icon-white.png' : '../../assets/PortfolioAssets/eye-icon.png'" alt="" class="w-6 pl-2"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="expertise" #expertiseSection class="h-100">
+      <div class="reveal">
+        <div class="expert-content pl-16 pr-16 pt-24">
+          <div class="expert-title flex justify-center mb-8">
+            <p class="expert-title-text inline-block text-2xl text-center">What I know ?</p>
+          </div>
+          <div class="expert-card flex flex-wrap">
+            <div class="card html-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="html-card-content cursor-pointer">
+                <div class="html-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/html-icon.png" alt="" class="html-img">
+                </div>
+                <div class="html-title text-center">
+                  <p class="html-title-text inline-block text-sm pt-1 text-transparent">HTML</p>
+                </div>
+                <div class="html-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>HTML5 elevates web development, interactive sites with multimedia and semantic elements.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card css-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="css-card-content cursor-pointer">
+                <div class="css-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/css-icon.png" alt="" class="css-img">
+                </div>
+                <div class="css-title text-center">
+                  <p class="css-title-text inline-block text-sm pt-1 text-transparent">CSS</p>
+                </div>
+                <div class="css-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>CSS3 revolutionizes web design with advanced styling, animations and delivering modern UI.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card ang-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="ang-card-content cursor-pointer">
+                <div class="ang-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/angular-icon.png" alt="" class="ang-img">
+                </div>
+                <div class="ang-title text-center">
+                  <p class="ang-title-text inline-block text-sm pt-1 text-transparent">Angular</p>
+                </div>
+                <div class="ang-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>Angular, by Google, is a front-end framework for dynamic SPA with two-way data binding.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card boot-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="boot-card-content cursor-pointer">
+                <div class="boot-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/bootstrap-icon.png" alt="" class="boot-img">
+                </div>
+                <div class="boot-title text-center">
+                  <p class="boot-title-text inline-block text-sm pt-1 text-transparent">BootsTrap</p>
+                </div>
+                <div class="boot-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>Bootstrap is a streamlining web design with sleek responsiveness enhancing front-end development.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card type-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="type-card-content cursor-pointer">
+                <div class="type-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/typescript-icon.png" alt="" class="type-img">
+                </div>
+                <div class="type-title text-center">
+                  <p class="type-title-text inline-block text-sm pt-1 text-transparent">TypeScript</p>
+                </div>
+                <div class="type-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>TS enhances web development with static typing and boosting code quality.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card api-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="api-card-content cursor-pointer">
+                <div class="api-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/api-icon.png" alt="" class="api-img">
+                </div>
+                <div class="api-title text-center">
+                  <p class="api-title-text inline-block text-sm pt-1 text-transparent">API</p>
+                </div>
+                <div class="api-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>API is a seamless communication, connecting diverse systems for efficient S/W integration.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card db-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="db-card-content cursor-pointer">
+                <div class="db-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/database-icon.png" alt="" class="db-img">
+                </div>
+                <div class="db-title text-center">
+                  <p class="db-title-text inline-block text-sm pt-1 text-transparent">Data Base</p>
+                </div>
+                <div class="db-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>DB will organize and manage information for efficient retrieval in S/W applications.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card office-card w-44 h-44 bg-white ml-16 mr-16 mb-16 rounded">
+              <div class="office-card-content cursor-pointer">
+                <div class="office-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/microsoft-icon.png" alt="" class="office-img">
+                </div>
+                <div class="office-title text-center">
+                  <p class="office-title-text inline-block text-sm pt-1 text-transparent">MS-Office</p>
+                </div>
+                <div class="office-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>MS-Office used for documentation and data collection for efficient information management.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="journey" #journeySection class="h-100">
+      <div class="reveal">
+        <div class="journey-content pl-16 pr-16 pt-24">
+          <div class="journey-title flex justify-center mb-8">
+            <p class="journey-title-text inline-block text-2xl text-center">What I did ?</p>
+          </div>
+          <div class="edu-exp-content flex justify-around mt-16">
+            <div class="education-content w-2/5">
+              <div class="education-title inline-block">
+                <p class="education-title-text">Education</p>
+                <div class="edu-img-content">
+                  <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 30%; transform: rotate(30deg); position: relative;">
+                  <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 50%; transform: rotate(30deg); position: relative;">
+                  <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 70%; transform: rotate(30deg); position: relative; left: 10px;">
+                  <div  class="edu-img">
+                    <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 100%; transform: rotate(30deg); position: relative; left: 20px;">
+                  </div>
+                </div>
+              </div>
+              <div class="edu-list-content">
+                <div class="edu-list-line float-right">
+                  <div class="edu-list-circle1">
+  
+                  </div>
+                  <div class="edu-list-circle2">
+  
+                  </div>
+                  <div class="edu-list-circle3">
+  
+                  </div>
+                </div>
+                <div class="edu-list text-sm pr-8 mt-8">
+                  <div class="edu-mca mb-6">
+                    <p class="mca-title font-bold">MASTER OF COMPUTER APPLICATIONS</p>
+                    <p class="mca-loc font-thin">Mahendra Engineering College, Namakkal(DT), Tamil Nadu</p>
+                    <p class="mca-year font-thin">2021 - 2023 <span class="mca-grade font-bold">CGPA - 9.2</span></p>
+                  </div>
+                  <div class="edu-bsc mb-6">
+                    <p class="bsc-title font-bold">BACHELOR OF COMPUTER SCIENCE</p>
+                    <p class="bsc-loc font-thin">Selvamm Arts & Science College, Namakkal(DT), Tamil Nadu</p>
+                    <p class="bsc-year font-thin">2018 - 2021 <span class="bsc-grade font-bold">CGPA - 8.0</span></p>
+                  </div>
+                  <div class="edu-hsc mb-6">
+                    <p class="hsc-title font-bold">HIGHER SECONDARY CERTIFICATE</p>
+                    <p class="hsc-loc font-thin">Cheran Matric Hr. Sec. School, Karur(DT), Tamil Nadu</p>
+                    <p class="hsc-year font-thin">2017 - 2018 <span class="hsc-grade font-bold">Percent - 83%</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider">
+    
+            </div>
+            <div class="experience-content w-2/5">
+              <div class="experience-title inline-block">
+                <p class="experience-title-text">Experience</p>
+                <div class="exp-img-content">
+                  <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 30%; transform: rotate(90deg);">
+                  <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 50%; transform: rotate(90deg);">
+                  <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 70%; transform: rotate(90deg);">
+                  <div class="exp-img">
+                    <img src="../../assets/PortfolioAssets/think-icon.png" alt="" style="width: 100%; transform: rotate(90deg);">
+                  </div>
+                </div>
+              </div>
+              <div class="exp-list-content">
+                <div class="exp-list-line mt-8">
+                  <div class="exp-list-circle1">
+  
+                  </div>
+                  <div class="exp-list-circle2">
+  
+                  </div>
+                </div>
+                <div class="exp-list text-sm pl-8">
+                  <div class="exp-se1 mb-6">
+                    <p class="se1-title font-bold">SOFTWARE ENGINEER - I</p>
+                    <p class="se1-loc font-thin">Brandmuscle India Pvt Ltd, Banglore(DT), Karnataka</p>
+                    <p class="se1-year font-thin"><span class="font-bold">Oct 2023 - </span> Present ({{presentMonths}} months)</p>
+                    <p class="se1-skill font-thin">I resolved software issues through bug fixes and implemented improvements in line with project requirements.</p>
+                  </div>
+                  <div class="exp-trainee mb-6">
+                    <p class="trainee-title font-bold">TRAINEE SOFTWARE ENGINEER</p>
+                    <p class="trainee-loc font-thin">Brandmuscle India Pvt Ltd, Banglore(DT), Karnataka</p>
+                    <p class="trainee-year font-thin"><span class="font-bold">Aug 2022 - </span> Sep 2023 (1 year & 2 months)</p>
+                    <p class="trainee-skill font-thin">Completed internship & started working on a project that includes front-end, back-end and API integration.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="services" #servicesSection class="h-100">
+      <div class="reveal">
+        <div class="services-content pl-16 pr-16 pt-24">
+          <div class="services-title flex justify-center mb-8">
+            <p class="services-title-text inline-block text-2xl text-center">What I do ?</p>
+          </div>
+          <div class="services-section flex">
+            <div class="services-card">
+              <div class="services-card-content p-6 h-full flex flex-col justify-between cursor-pointer">
+                <div class="single-page-image relative flex justify-center">
+                  <img src="../../assets/PortfolioAssets/spa-icon-green.png" alt="" class="services-image">
+                </div>
+                <div class="single-page-title services-card-title relative pb-2">
+                  <p class="single-page-title-text font-semibold">Single Page Appication</p>
+                </div>
+                <div class="single-page-desc relative">
+                  <p class="single-page-desc-text text-sm font-thin">SPAs — dynamic and responsive.
+                    From sleek portfolios to dynamic e-commerce and real-time collaboration,
+                    SPAs redefine engagement. Experience efficiency, speed, and user-centric
+                    design like task management, weather apps, and expense tracker.</p>
+                </div>
+              </div>
+            </div>
+            <div class="services-card">
+              <div class="services-card-content p-6 h-full flex flex-col justify-between cursor-pointer">
+                <div class="static-page-image relative flex justify-center">
+                  <img src="../../assets/PortfolioAssets/static-icon-green.png" alt="" class="services-image">
+                </div>
+                <div class="static-page-title services-card-title relative pb-2">
+                  <p class="static-page-title-text font-semibold">Static Development</p>
+                </div>
+                <div class="static-page-desc relative">
+                  <p class="static-page-desc-text text-sm font-thin">Discover the elegance and efficiency of static
+                    web development—crafting captivating portfolios, informative recipe books,
+                    and polished product landing pages. Experience the versatility with dynamic
+                    event pages and precision countdown timers.</p>
+                </div>
+              </div>
+            </div>
+            <div class="services-card">
+              <div class="services-card-content p-6 h-full flex flex-col justify-between cursor-pointer">
+                <div class="dynamic-page-image relative flex justify-center">
+                  <img src="../../assets/PortfolioAssets/dynamic-icon-green.png" alt="" class="services-image">
+                </div>
+                <div class="dynamic-page-title services-card-title relative pb-2">
+                  <p class="dynamic-page-title-text font-semibold">Dynamic Development</p>
+                </div>
+                <div class="dynamic-page-desc relative">
+                  <p class="dynamic-page-desc-text text-sm font-thin">Enter the dynamic world of web development,
+                    harmonizing interactivity with robust functionality. Develop real-time solutions,
+                    including e-learning platform, booking & reservation system, online blogging, job
+                    board, news portal, music streaming and recipe book.</p>
+                </div>
+              </div>
+            </div>
+            <div class="services-card">
+              <div class="services-card-content p-6 h-full flex flex-col justify-between cursor-pointer">
+                <div class="ecom-page-image relative flex justify-center">
+                  <img src="../../assets/PortfolioAssets/buy-icon-green.png" alt="" class="services-image">
+                </div>
+                <div class="ecom-page-title services-card-title relative pb-2">
+                  <p class="ecom-page-title-text font-semibold">E-Commerce Platform</p>
+                </div>
+                <div class="ecom-page-desc relative">
+                  <p class="ecom-page-desc-text text-sm font-thin">Proficient in crafting ecommerce websites, I bring
+                    expertise in user-centric design, seamless navigation, and secure transactions.
+                    My skillset ensures a premium online shopping experience, integrating functionality
+                    with an aesthetically pleasing interface.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact" #contactSection class="h-100">
+      <div class="reveal">
+        <div class="contact-content pl-16 pr-16 pt-24">
+          <div class="contact-title flex justify-center mb-8">
+            <p class="contact-title-text inline-block text-2xl text-center">To get in touch...</p>
+          </div>
+          <div class="contact-info-content absolute text-white p-4 ml-10">
+            <div class="contact-info-title mb-6 text-center">
+              <p class="contact-info-title-text text-xl font-bold">Contact Info</p>
+            </div>
+            <div class="contact-info-desc flex flex-col">
+              <div class="flex" (mouseover)="onHover('location')" (mouseleave)="onLeave()">
+                <a href="https://maps.app.goo.gl/U1aB8qdoHD4SwmVC8" target="_blank" class="contact-info-loc flex mb-6">
+                  <img src="../../assets/PortfolioAssets/address-icon-white.png" alt="">
+                  <p class="contact-info-loc-desc text-sm mt-0.5 ml-1.5">Karur, TamilNadu</p>
+                </a>
+                <button [ngStyle]="{'display': isHovered === 'location' ? 'inline-block' : 'none'}" (click)="copy('location')" class="mb-6 ml-2"><img src="../../assets/PortfolioAssets/copy-white.png" class="w-7" alt=""></button>
+              </div>
+              <div class="flex" (mouseover)="onHover('mail')" (mouseleave)="onLeave()">
+                <a href="mailto:hamandkumar78@gmail.com" class="contact-info-mail flex mb-6">
+                  <img src="../../assets/PortfolioAssets/mail-icon-white.png" alt="">
+                  <p class="contact-info-mail-desc text-sm mt-0.5 ml-1.5" id="mail-id">hamandkumar78@gmail.com</p>
+                </a>
+                <button [ngStyle]="{'display': isHovered === 'mail' ? 'inline-block' : 'none'}" (click)="copy('mail')" class="mb-6 ml-2"><img src="../../assets/PortfolioAssets/copy-white.png" class="w-7" alt=""></button>
+              </div>
+              <div class="flex" (mouseover)="onHover('mobile')" (mouseleave)="onLeave()">
+                <a href="tel:8807005753" class="contact-info-mob flex mb-6">
+                  <img src="../../assets/PortfolioAssets/phone-icon-white.png" alt="">
+                  <p class="contact-info-mob-desc text-sm ml-1.5" id="mobile-number">880 700 5753</p>
+                </a>
+                <button [ngStyle]="{'display': isHovered === 'mobile' ? 'inline-block' : 'none'}" (click)="copy('mobile')" class="mb-6 ml-2"><img src="../../assets/PortfolioAssets/copy-white.png" class="w-7" alt=""></button>
+              </div>
+            </div>
+            <div class="contact-social-media flex justify-center mt-8 mb-6">
+              <a href="https://www.linkedin.com/in/hamandakkumar/" target="_blank" class="contact-social-media-linkedin social-media">
+                <img src="../../assets/PortfolioAssets/linkedin-icon-green.png" alt="">
+                <div class="linkedin-tooltip"><p>Linked In</p></div>
+              </a>
+              <a href="https://www.facebook.com/" target="_blank" class="contact-social-media-facebook social-media">
+                <img src="../../assets/PortfolioAssets/fb-icon-green.png" alt="">
+                <div class="facebook-tooltip"><p>Facebook</p></div>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" class="contact-social-media-insta social-media">
+                <img src="../../assets/PortfolioAssets/instagram-icon-green.png" alt="">
+                <div class="instagram-tooltip"><p>Instagram</p></div>
+              </a>
+              <a href="https://wa.me/8807005753" target="_blank" class="contact-social-media-whatsapp social-media">
+                <img src="../../assets/PortfolioAssets/whatsapp-icon-green.png" alt="">
+                <div class="whatsapp-tooltip"><p>Whatsapp</p></div>
+              </a>
+            </div>
+          </div>
+          <div class="contact-message-content">
+            <div class="contact-message-title mt-6">
+              <p class="contact-message-title-text text-xl font-bold">Send a message</p>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="70d3756b-6884-4845-959b-07dd01c4b5f4">
+              <div class="contact-name-mail flex mt-4">
+                <div class="contact-name mr-14">
+                  <p class="contact-name-label text-sm mb-2">Full Name</p>
+                  <input type="text" name="name" placeholder="Enter your name" class="contact-name-field text-sm"
+                    required autocomplete="off">
+                </div>
+                <div class="contact-mail ml-14">
+                  <p class="contact-mail-label text-sm mb-2">Mail Id</p>
+                  <input type="email" name="email" placeholder="Enter your mail-id" class="contact-mail-field text-sm"
+                    required autocomplete="off">
+                </div>
+              </div>
+              <div class="contact-message mt-4">
+                <p class="contact-message-label text-sm mb-2">Message</p>
+                <textarea name="message" id="" placeholder="Enter your message......" cols="30" rows="3" minlength="10"
+                  class="contact-message-field text-sm" required></textarea>
+              </div>
+              <div class="contact-send mt-3">
+                <input type="submit" value="Send" class="contact-send-button">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isMobileScreen()">
+  <div class="fixed left-0 right-0 flex items-center justify-between pl-8 pr-8 h-20 navbar shadow-md bg-white">
+    <!-- Logo on the left -->
+    <div>
+        <img src="../../assets/PortfolioAssets/Hamand-Kumar.png" alt="Logo" class="navbar-logo w-24">
+    </div>
+
+    <!-- Menu on the right -->
+    <div class="navbar-menu">
+      <label for="menuCheck" class="menuBar flex" (click)="showMenuBar()">
+        <img [src]="menuIconSrc" src="../../assets/PortfolioAssets/menu-icon.png" alt="" width="32px" class="relative" >
+      </label>
+        <ul class="flex flex-col text-center absolute menuMob" [ngStyle]="{'transform': showMenu ? 'translateY(22px)' : 'translateY(-107%)'}">
+          <li class=""><a (click)="navigateTo('home','')" [class.active]="activeLink === 'home'" class="cursor-pointer inline-block">Home</a></li>
+          <li class=""><a (click)="navigateTo('intro','')" [class.active]="activeLink === 'intro'" class="cursor-pointer inline-block">My Intro</a></li>
+          <li class=""><a (click)="navigateTo('expertise','')" [class.active]="activeLink === 'expertise'" class="cursor-pointer inline-block">Expertise</a></li>
+          <li class=""><a (click)="navigateTo('journey','')" [class.active]="activeLink === 'journey'" class="cursor-pointer inline-block">Awesome Journey</a></li>
+          <li class=""><a (click)="navigateTo('services','')" [class.active]="activeLink === 'services'" class="cursor-pointer inline-block">Services</a></li>
+          <li><a (click)="navigateTo('contact','')" [class.active]="activeLink === 'contact'" class="cursor-pointer inline-block">Contact</a></li>
+        </ul>
+    </div>
+  </div>
+  <div class="contain">
+    <div id="home" #homeSection class="h-100">
+      <div class="home-content flex flex-col items-center justify-evenly h-full pl-4 pr-4 pt-16">
+        <div class="image-content flex justify-center">
+          <div class="image border-4 rounded-full border-solid relative shadow-md">
+            <img src="../../assets/PortfolioAssets/hamand.JPG" alt="profile" class="rounded-full border-8 border-white border-solid">
+          </div>
+          <div class="border absolute z-0 border-solid shadow-md">
+            <div class="circle w-full h-full relative z-0 border-8 border-solid border-white">
+  
+            </div>
+          </div>
+        </div>
+        <div class="home-text-content pl-2 relative">
+          <div class="text flex items-center justify-center h-24">
+            <div class="h-text">
+              <p class="text-76 text-white text-shadow-md">H</p>
+            </div>
+            <div class="name-text">
+              <p class="text-lg text-white">ello, It's me</p>
+              <p class="text-2xl text-white text-shadow-sm">amandakkumar</p>
+            </div>
+          </div>
+          <div class="about-text flex h-10">
+            <p class="text-white text-3xl font-medium"> I'm a </p>
+            <div class="about text-teal-700 text-3xl font-bold block pl-2 grid overflow-hidden h-8">
+              <span>Full Stack Developer.</span>
+              <span>Web Developer.</span>
+              <span>Software Engineer.</span>
+            </div>
+          </div>
+          <div class="get-text flex justify-center pt-4">
+            <button class="get-btn pl-5 pr-5 h-8 rounded flex items-center justify-center" (click)="navigateTo('contact','fromHome')">Get In Touch</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="intro" #introSection class="h-100">
+      <div class="reveal">
+        <div class="intro-content pl-4 pr-4 pt-28">
+          <div class="expert-title flex justify-center mb-8">
+            <p class="expert-title-text inline-block text-2xl text-center">What I know ?</p>
+          </div>
+          <div class="image-content">
+            <img src="../../assets/PortfolioAssets/intro-img.png" alt="intro" class="image relative float-right">
+          </div>
+            <p class="text text-justify text-gray-800">Marvel at the coding sorcerer, armed with a Master's in Computer Applications (MCA) and
+              1.5 years of valiantly battling bugs in the unpredictable realm of full-stack development. I'm not merely
+              a Software Engineer; I'm the wizard your web applications never knew they were missing. A Dynamic Full Stack
+              Developer with the ability to turn convoluted business requirements into elegant code. I don't just write
+              code; I create digital magic that leaves users impressed and developers wondering, 'How did they do that?'</p>
+              <br>
+            <p class="text text-justify text-gray-800">Whether it's front-end finesse or back-end wizardry, I've got it all under my spell. My
+              expertise resembles a magical array of technologies and programming languages - I've dabbled in so many, I 
+              practically speak in code. So, if you seek someone to transform your software dreams into reality, look no 
+              further. I'm not just committed to delivering superior, scalable, and responsive software; I'm committed 
+              to doing it with a dash of enchantment and a sprinkle of coding sorcery.</p>
+            <div class="intro-btn block pt-4">
+              <button class="download-btn flex justify-evenly items-center text-white h-8 rounded-md pl-5 pr-5" (click)="downloadBtn()">Download Resume <img src="../../assets/PortfolioAssets/download-icon.png" alt="download" class="w-6 pl-2 download-btn-img"></button>
+              <button class="view-btn flex justify-evenly items-center h-8 rounded-md pl-5 pr-5" (click)="viewResume()" (mouseover)="onHover('view')" (mouseleave)="onLeave()" >View Resume <img [src]="isHovered ? '../../assets/PortfolioAssets/eye-icon-white.png' : '../../assets/PortfolioAssets/eye-icon.png'" alt="" class="w-6 pl-2"></button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="expertise" #expertiseSection class="h-112">
+      <div class="reveal">
+        <div class="expert-content pl-4 pr-4 pt-28">
+          <div class="expert-title flex justify-center mb-8">
+            <p class="expert-title-text inline-block text-2xl text-center">What I know ?</p>
+          </div>
+          <div class="expert-card flex flex-wrap justify-around">
+            <div class="card html-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="html-card-content cursor-pointer">
+                <div class="html-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/html-icon.png" alt="" class="html-img">
+                </div>
+                <div class="html-title text-center">
+                  <p class="html-title-text inline-block text-sm pt-1 text-transparent">HTML</p>
+                </div>
+                <div class="html-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>HTML5 elevates web development, interactive sites with multimedia and semantic elements.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card css-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="css-card-content cursor-pointer">
+                <div class="css-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/css-icon.png" alt="" class="css-img">
+                </div>
+                <div class="css-title text-center">
+                  <p class="css-title-text inline-block text-sm pt-1 text-transparent">CSS</p>
+                </div>
+                <div class="css-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>CSS3 revolutionizes web design with advanced styling, animations and delivering modern UI.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card ang-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="ang-card-content cursor-pointer">
+                <div class="ang-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/angular-icon.png" alt="" class="ang-img">
+                </div>
+                <div class="ang-title text-center">
+                  <p class="ang-title-text inline-block text-sm pt-1 text-transparent">Angular</p>
+                </div>
+                <div class="ang-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>Angular, by Google, is a front-end framework for dynamic SPA with two-way data binding.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card boot-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="boot-card-content cursor-pointer">
+                <div class="boot-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/bootstrap-icon.png" alt="" class="boot-img">
+                </div>
+                <div class="boot-title text-center">
+                  <p class="boot-title-text inline-block text-sm pt-1 text-transparent">BootsTrap</p>
+                </div>
+                <div class="boot-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>Bootstrap is a streamlining web design with sleek responsiveness enhancing front-end development.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card type-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="type-card-content cursor-pointer">
+                <div class="type-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/typescript-icon.png" alt="" class="type-img">
+                </div>
+                <div class="type-title text-center">
+                  <p class="type-title-text inline-block text-sm pt-1 text-transparent">TypeScript</p>
+                </div>
+                <div class="type-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>TS enhances web development with static typing and boosting code quality.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card api-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="api-card-content cursor-pointer">
+                <div class="api-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/api-icon.png" alt="" class="api-img">
+                </div>
+                <div class="api-title text-center">
+                  <p class="api-title-text inline-block text-sm pt-1 text-transparent">API</p>
+                </div>
+                <div class="api-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>API is a seamless communication, connecting diverse systems for efficient S/W integration.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card db-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="db-card-content cursor-pointer">
+                <div class="db-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/database-icon.png" alt="" class="db-img">
+                </div>
+                <div class="db-title text-center">
+                  <p class="db-title-text inline-block text-sm pt-1 text-transparent">Data Base</p>
+                </div>
+                <div class="db-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>DB will organize and manage information for efficient retrieval in S/W applications.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card office-card w-44 h-44 bg-white mb-10 rounded">
+              <div class="office-card-content cursor-pointer">
+                <div class="office-logo flex justify-center">
+                  <img src="../../assets/PortfolioAssets/microsoft-icon.png" alt="" class="office-img">
+                </div>
+                <div class="office-title text-center">
+                  <p class="office-title-text inline-block text-sm pt-1 text-transparent">MS-Office</p>
+                </div>
+                <div class="office-text text-xs text-center pt-2 pl-2 pr-2">
+                  <p>MS-Office used for documentation and data collection for efficient information management.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="journey" #journeySection class="h-100">
+      <div class="reveal">
+        <div class="journey-content pl-4 pr-4 pt-28">
+          <div class="journey-title flex justify-center mb-8">
+            <p class="journey-title-text inline-block text-2xl text-center">What I did ?</p>
+          </div>
+          <div class="edu-exp-content flex justify-around mt-8 flex-col pl-3">
+            <div class="education-content pr-4">
+              <div class="education-title inline-block">
+                <p class="education-title-text">Education</p>
+              </div>
+              <div class="edu-list-content">
+                <div class="edu-list-line float-left">
+                  <div class="edu-list-circle1">
+  
+                  </div>
+                  <div class="edu-list-circle2">
+  
+                  </div>
+                  <div class="edu-list-circle3">
+  
+                  </div>
+                </div>
+                <div class="edu-list text-sm pl-8 mt-8">
+                  <div class="edu-mca mb-6">
+                    <p class="mca-title font-bold">MASTER OF COMPUTER APPLICATIONS</p>
+                    <p class="mca-loc font-thin">Mahendra Engineering College, Namakkal(DT), Tamil Nadu</p>
+                    <p class="mca-year font-thin">2021 - 2023 <span class="mca-grade font-bold">CGPA - 9.2</span></p>
+                  </div>
+                  <div class="edu-bsc mb-6">
+                    <p class="bsc-title font-bold">BACHELOR OF COMPUTER SCIENCE</p>
+                    <p class="bsc-loc font-thin">Selvamm Arts & Science College, Namakkal(DT), Tamil Nadu</p>
+                    <p class="bsc-year font-thin">2018 - 2021 <span class="bsc-grade font-bold">CGPA - 8.0</span></p>
+                  </div>
+                  <div class="edu-hsc mb-6">
+                    <p class="hsc-title font-bold">HIGHER SECONDARY CERTIFICATE</p>
+                    <p class="hsc-loc font-thin">Cheran Matric Hr. Sec. School, Karur(DT), Tamil Nadu</p>
+                    <p class="hsc-year font-thin">2017 - 2018 <span class="hsc-grade font-bold">Percent - 83%</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider-container flex justify-center">
+              <div class="divider">
+    
+              </div>
+            </div>
+            <div class="experience-content mt-8">
+              <div class="experience-title inline-block">
+                <p class="experience-title-text">Experience</p>
+              </div>
+              <div class="exp-list-content">
+                <div class="exp-list-line mt-8">
+                  <div class="exp-list-circle1">
+  
+                  </div>
+                  <div class="exp-list-circle2">
+  
+                  </div>
+                </div>
+                <div class="exp-list text-sm pl-8">
+                  <div class="exp-se1 mb-6">
+                    <p class="se1-title font-bold">SOFTWARE ENGINEER - I</p>
+                    <p class="se1-loc font-thin">Brandmuscle India Pvt Ltd, Banglore(DT), Karnataka</p>
+                    <p class="se1-year font-thin"><span class="font-bold">Oct 2023 - </span> Present ({{presentMonths}} months)</p>
+                    <p class="se1-skill font-thin">I resolved software issues through bug fixes and implemented improvements in line with project requirements.</p>
+                  </div>
+                  <div class="exp-trainee mb-6">
+                    <p class="trainee-title font-bold">TRAINEE SOFTWARE ENGINEER</p>
+                    <p class="trainee-loc font-thin">Brandmuscle India Pvt Ltd, Banglore(DT), Karnataka</p>
+                    <p class="trainee-year font-thin"><span class="font-bold">Aug 2022 - </span> Sep 2023 (1 year & 2 months)</p>
+                    <p class="trainee-skill font-thin">Completed internship & started working on a project that includes front-end, back-end and API integration.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="services" #servicesSection class="h-100">
+      <div class="reveal">
+        <div class="services-content pl-4 pr-4 pt-28">
+          <div class="services-title flex justify-center mb-8">
+            <p class="services-title-text inline-block text-2xl text-center">What I do ?</p>
+          </div>
+        </div>
+        <p-carousel [value]="carouselItems" [circular]="true" [autoplayInterval]="2000" [showIndicators]="true">
+          <ng-template pTemplate="item" let-item>
+            <div class="services-card">
+              <div class="services-card-content p-6 h-full flex flex-col justify-between cursor-pointer">
+                <div class="single-page-image relative flex justify-center">
+                  <img [src]="item.img" alt="" class="services-image">
+                </div>
+                <div class="single-page-title services-card-title relative pb-2">
+                  <p class="single-page-title-text font-semibold">{{ item.title }}</p>
+                </div>
+                <div class="single-page-desc relative">
+                  <p class="single-page-desc-text text-sm font-thin">{{item.textContent}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+    <div id="contact" #contactSection class="h-100">
+      <div class="reveal">
+        <div class="contact-content pl-4 pr-4 pt-28">
+          <div class="contact-title flex justify-center mb-8">
+            <p class="contact-title-text inline-block text-2xl text-center">To get in touch...</p>
+          </div>
+          <div class="flex justify-center">
+            <div class="contact-info-content absolute text-white p-4 mt-6">
+              <div class="contact-info-title mb-6 text-center">
+                <p class="contact-info-title-text text-xl font-bold">Contact Info</p>
+              </div>
+              <div class="contact-info-desc flex flex-col">
+                <div class="flex" (mouseover)="onHover('location')" (mouseleave)="onLeave()">
+                  <a href="https://maps.app.goo.gl/U1aB8qdoHD4SwmVC8" target="_blank" class="contact-info-loc flex mb-6">
+                    <img src="../../assets/PortfolioAssets/address-icon-white.png" alt="">
+                    <p class="contact-info-loc-desc text-sm mt-0.5 ml-1.5">Karur, TamilNadu</p>
+                  </a>
+                  <button [ngStyle]="{'display': isHovered === 'location' ? 'inline-block' : 'none'}" (click)="copy('location')" class="mb-6 ml-2"><img src="../../assets/PortfolioAssets/copy-white.png" class="w-7" alt=""></button>
+                </div>
+                <div class="flex" (mouseover)="onHover('mail')" (mouseleave)="onLeave()">
+                  <a href="mailto:hamandkumar78@gmail.com" class="contact-info-mail flex mb-6">
+                    <img src="../../assets/PortfolioAssets/mail-icon-white.png" alt="">
+                    <p class="contact-info-mail-desc text-sm mt-0.5 ml-1.5" id="mail-id">hamandkumar78@gmail.com</p>
+                  </a>
+                  <button [ngStyle]="{'display': isHovered === 'mail' ? 'inline-block' : 'none'}" (click)="copy('mail')" class="mb-6 ml-2"><img src="../../assets/PortfolioAssets/copy-white.png" class="w-7" alt=""></button>
+                </div>
+                <div class="flex" (mouseover)="onHover('mobile')" (mouseleave)="onLeave()">
+                  <a href="tel:8807005753" class="contact-info-mob flex mb-6">
+                    <img src="../../assets/PortfolioAssets/phone-icon-white.png" alt="">
+                    <p class="contact-info-mob-desc text-sm ml-1.5" id="mobile-number">880 700 5753</p>
+                  </a>
+                  <button [ngStyle]="{'display': isHovered === 'mobile' ? 'inline-block' : 'none'}" (click)="copy('mobile')" class="mb-6 ml-2"><img src="../../assets/PortfolioAssets/copy-white.png" class="w-7" alt=""></button>
+                </div>
+              </div>
+              <div class="contact-social-media flex justify-center mt-8 mb-6">
+                <a href="https://www.linkedin.com/in/hamandakkumar/" target="_blank" class="contact-social-media-linkedin social-media">
+                  <img src="../../assets/PortfolioAssets/linkedin-icon-green.png" alt="">
+                  <div class="linkedin-tooltip"><p>Linked In</p></div>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" class="contact-social-media-facebook social-media">
+                  <img src="../../assets/PortfolioAssets/fb-icon-green.png" alt="">
+                  <div class="facebook-tooltip"><p>Facebook</p></div>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="contact-social-media-insta social-media">
+                  <img src="../../assets/PortfolioAssets/instagram-icon-green.png" alt="">
+                  <div class="instagram-tooltip"><p>Instagram</p></div>
+                </a>
+                <a href="https://wa.me/8807005753" target="_blank" class="contact-social-media-whatsapp social-media">
+                  <img src="../../assets/PortfolioAssets/whatsapp-icon-green.png" alt="">
+                  <div class="whatsapp-tooltip"><p>Whatsapp</p></div>
+                </a>
+              </div>
+            </div>
+            <div class="contact-message-content">
+              <div class="contact-message-title mt-8">
+                <p class="contact-message-title-text text-xl font-bold text-center">Send a message</p>
+              </div>
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="70d3756b-6884-4845-959b-07dd01c4b5f4">
+                <div class="contact-name-mail flex mt-4 flex-col">
+                  <div class="contact-name">
+                    <p class="contact-name-label text-sm mb-2">Full Name</p>
+                    <input type="text" name="name" placeholder="Enter your name" class="contact-name-field text-sm"
+                      required autocomplete="off">
+                  </div>
+                  <div class="contact-mail">
+                    <p class="contact-mail-label text-sm mb-2">Mail Id</p>
+                    <input type="email" name="email" placeholder="Enter your mail-id" class="contact-mail-field text-sm"
+                      required autocomplete="off">
+                  </div>
+                </div>
+                <div class="contact-message mt-4">
+                  <p class="contact-message-label text-sm mb-2">Message</p>
+                  <textarea name="message" id="" placeholder="Enter your message......" cols="30" rows="3" minlength="10"
+                    class="contact-message-field text-sm" required></textarea>
+                </div>
+                <div class="contact-send mt-3">
+                  <input type="submit" value="Send" class="contact-send-button">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #viewResumePopup>
+  <div class="viewResume p-6">
+    <div class="header">
+      <div class="title flex justify-between">
+        <p class="title-text">Resume</p>
+        <div class="close">
+          <img src="../../assets/PortfolioAssets/cancel-icon.png" alt="cancel" class="w-7" (click)="closePopup()">
+        </div>
+      </div>
+    </div>
+    <div class="popupContent">
+      <div *ngIf="pdfViewerModuleLoaded">
+        <ngx-extended-pdf-viewer
+          [src]="pdfSrc"
+          height="470px"
+          [showToolbar]="false"
+        ></ngx-extended-pdf-viewer>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #snackbarTemplate style="box-shadow: none !important;">
+  <div class="snackbarTemplate justify-between">
+    <div class="popupContent">
+      <span class="popupMessage">{{popupMessage}}</span>
+    </div>
+    <img [src]="closeIcon" class="snackClose w-8 cursor-pointer" (click)="closeSnackBar()" alt="closeIcon">
+  </div>
+</ng-template>
