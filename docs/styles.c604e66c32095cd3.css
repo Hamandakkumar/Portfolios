@@ -6,5 +6,7 @@
 .markdown-body h1{display: none !important;}
 .container-lg{margin: 0 !important; padding: 0 !important; max-width: 100% !important;}
 .markdown-body ul, .markdown-body p{margin-bottom: 0 !important;}
-.markdown-body img{background-color: transparent !important;}
+.markdown-body img{background-color: transparent !important; box-sizing:border-box !important;}
 .contact-message-title{margin-top: 1.5rem !important;}
+.home-content{padding-top: 16px !important;}
+.p-6{padding: 1.5rem !important;}

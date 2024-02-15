@@ -1529,7 +1529,7 @@ li a.active::after{
         width: 80%;
         height: 37vh; 
         top: 14%;
-        right: 9%; 
+        right: 10%; 
         animation: circleSlideMob 1.5s ease, floatOpposite 4s ease-in-out infinite 2s;
     }
 
