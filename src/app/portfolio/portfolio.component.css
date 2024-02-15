@@ -80,7 +80,7 @@ li a.active::after{
 }
 
 .get-btn:hover{
-    background-position: 140px 0px;
+    background-position: 156px 0px;
     color: #ffffff;
 }
 
@@ -136,7 +136,7 @@ li a.active::after{
 }
 
 .intro-btn .download-btn:hover{
-    background-position: 196px 0px;
+    background-position: 228px 0px;
 }
 
 .intro-btn .view-btn{
@@ -149,7 +149,7 @@ li a.active::after{
 }
 
 .intro-btn .view-btn:hover{
-    background-position: 160px 0px;
+    background-position: 192px 0px;
     color: var(--white);
     border: 1px solid var(--secondary-color);
 }
@@ -1232,6 +1232,7 @@ li a.active::after{
     transition: .3s ease;
     position: relative;
     overflow: hidden;
+    padding: 24px !important;
 }
 
 .services-card-content::before{
