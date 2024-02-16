@@ -11,10 +11,12 @@ module.exports = {
     plugin(({ addUtilities }) => {
       const newUtilities = {
         '.h-100': {
-          height: '100vh !important',
+          minHeight: '100vh !important',
+          paddingBottom: '5% !important'
         },
         '.h-112': {
-          height: '112vh !important',
+          minHeight: '112vh !important',
+          paddingBottom: '5% !important'
         },
         '.text-76': {
           fontSize: '76px',
