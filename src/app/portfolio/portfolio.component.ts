@@ -120,7 +120,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   navigateTo(section: string, check: string): void {
-    history.pushState(null, '', '/' + section);
+    history.pushState(null, '', '/Portfolios');
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
